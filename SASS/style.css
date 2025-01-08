@@ -7,6 +7,8 @@
     body {
         margin-left: unset;
         margin-right: unset;
+        margin-top: unset;
+        margin-bottom: unset;
     }
 
     /****** Header ***********/
@@ -79,19 +81,287 @@
         background: linear-gradient(#FF79DA, #9356DC);
         box-shadow: 0px 4px 10px 0px #00000040;
         color: white;
-        font-size: 16px;
-        padding-left: 30px;
-        padding-right: 30px;
-        padding-top: 12px;
-        padding-bottom: 12px;
         border: unset;
     }
 
     .boutton {
         display: flex;
         justify-content: center;
-        padding-top: 30px;
-        
+        padding-top: 20px;
     }
+
+    .boutton span {
+        display: flex;
+        text-align: center;
+        font-size: 16px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        padding-left: 20px;
+        padding-right: 28px;
+        font-weight: 400;
+    }
+
+        /****** Fonctionnement ***********/
+
+    .fonctionnement h2 {
+        padding-top: 31px;
+        padding-left: 17px;
+    }
+
+    .fonctionnement ul {
+        list-style-type: none;  
+        padding-left: 28px;
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+
+    .fonctionnement li {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 94%;
+        padding-top: 21px;
+        padding-bottom: 22px;
+        margin-bottom: 22px;
+        border: solid 2px #F6F6F6;
+        background-color: #F6F6F6;
+        border-radius: 20px;
+        box-shadow: 0px 4px 15px 0px #00000026;
+    }
+
+    .fonctionnement span {
+        margin-top: 1px;
+        border: solid 2px #9356DC;
+        background-color: #9356DC;
+        border-radius: 50px;
+        width: 22px;
+        height: 22px;
+        display: flex;
+        justify-content: center;
+        margin-left: -13px;
+        color: white;
+    }
+
+    .fonctionnement i {
+        display: flex;
+        font-size: 19px;
+        padding-left: 23px;
+        color: #7E7E7E;
+    }
+
+    .fonctionnement p {
+        display: flex;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 23px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+        /****** Restaurants ***********/
+
+    .restaurants {
+        background-color: #F6F6F6;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 68px;
+    }
+
+    .restaurants h2 {
+        padding-top: 32px;
+        padding-left: 18px;
+        margin-bottom: 0px;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 20px;
+        filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+        height: 250px;
+        width: 90%;
+    }
+
+    .restaurants-cards {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding-top: 19px;        
+    }
+
+    .restaurants-cards img {
+        width: 100%;
+        height: 175px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        object-fit: cover;
+    }
+
+    .restaurants-cards .card-content {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+    }
+
+    .restaurants-cards .card-title {
+        margin-top: 10px;
+        margin-bottom: 4px;
+        color: black;
+        font-size: 18px;
+    }
+      
+    .restaurants-cards .card-subtitle {
+        margin: 0;
+        color: black;
+        font-size: 16px;
+        margin-top: -3px;
+    }
+
+    .restaurants-cards a {
+        text-decoration: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /****** Footer ***********/
+    
+    footer {
+        margin-top: 0px;
+        padding-top: 0px;
+        background-color: #353535;
+        padding-bottom: 20px;
+    }
+
+    footer .titre {
+        width: 100px;
+        margin-left: 25px;
+    }
+
+    footer h2 {
+        color: white;
+    }
+
+    footer ul {
+        list-style-type: none;
+        padding-left: 0px;
+        margin-top: 13px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+
+    footer li {
+        color: white;
+        display: flex;
+        margin-left: 25px;
+        margin-bottom: 5px;
+    }
+
+    footer p {
+        margin: 0px;
+        color: white;
+    }
+
+    footer li i {
+        font-size: 11px;
+        margin-top: 5px;
+        margin-right: 12px;
+        color: white;
+    }
+
+    .fa-handshake-angle {
+        margin-left: -3px;
+    }
+
+    footer a {
+        text-decoration: none;
+        display: flex;
+    }
+
+    /****** Restaurant la palette du goût ***********/
+
+    .photorestaurant img {
+        width: 100%;
+        height: 275px;
+        object-fit: cover;   
+    }
+
+    /****** Menu ***********/
+
+    .page {
+        background-color: #F6F6F6;
+        padding-top: 30px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu h2 {
+        font-size: 17px;
+        font-weight: 400;
+        width: 40px;
+        border-bottom: #99E2D0 solid 3px;
+        height: 25px; 
+        margin-left: 15px;     
+    }
+
+    .menu .plats {
+        background-color: white;
+        box-shadow: 0px 4.01px 15.04px 0px #0000001A;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 15px;    
+    }
+
+    .menu .soustitre {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+    }
+
+    .menu .soustitre span {
+        margin-top: 3px;
+    }
+
+    .plats h3 {
+        font-weight: 600;
+        font-size: 18px;
+        display: flex;
+    }
+
+    .plats p {
+        font-weight: 300;
+        font-size: 16px;
+    }
+
+    .plats span {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .plats h3,p,span {
+        margin: unset;
+        padding: unset;
+    }
+
+     .menu .rectangle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+     }
+    
+     .plats span {
+        padding-right: 10px;
+     }
+
+     .plats h3,p {
+        padding-left: 10px;
+     }
 
 }
