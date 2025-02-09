@@ -23,7 +23,7 @@
         border-top-color: #9356DC;
         border-bottom-color: #9356DC;
         animation: load 4s linear infinite;
-        display: none;
+    
     }
 
     @keyframes load {
