@@ -13,46 +13,52 @@
 
     /****** loader ***********/
 
+    .containerloader {
+        display: flex;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        z-index: 2;
+        opacity: 0;
+    }
+
     .loader {
-        width: 90px;
-        height: 90px;
-        border: 20px solid #b9babe;
+        width: 45px;
+        height: 45px;
+        border: 10px solid #ffffff;
         margin-top: 100px;
         margin-bottom: 100px;
         border-radius: 50%;
-        border-top-color: #9356DC;
-        border-bottom-color: #9356DC;
+        border-top-color: #000000;
         animation: load 4s linear infinite;
-    
     }
+
+    
+
+    
 
     @keyframes load {
         0%{
             transform: rotate(0deg) scale(1);
-            border-top-color: #510aa7;
-            border-bottom-color: #510aa7;
         }
 
         25%{
-            border-top-color: #cd31e2;
-            border-bottom-color: #cd31e2;
+            transform: rotate(180deg) scale(1.10);
         }
 
         50%{
-            transform: rotate(360deg) scale(1.10);
-            border-top-color: #510aa7;
-            border-bottom-color: #510aa7;
+            transform: rotate(360deg) scale(1);
         }
 
         75%{
-            border-top-color: #cd31e2;
-            border-bottom-color: #cd31e2;
+            transform: rotate(540deg) scale(1.10);
         }
 
         100%{
             transform: rotate(720deg) scale(1);
-            border-top-color: #9356DC;
-            border-bottom-color: #9356DC;
         }
     }
 
@@ -492,10 +498,17 @@
         padding-right: 4px;
     }
 
+    .menu .animplats {
+        display: flex;
+        padding-left: 103px;
+        transition: transform 250ms linear;
+        width: 90px;
+        height: 100%;
+    }
+
     .plats h3 {
         font-weight: 600;
         font-size: 18px;
-        display: flex;
         width: 175px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -557,12 +570,7 @@
 
     /****** Annimation ***********/
 
-    .menu .animplats {
-        display: flex;
-        padding-left: 103px;
-        transition: transform 250ms linear;
-    }
 
-    .animplats:hover {
-        transform: translateX(-103px);
+    .plats:hover .animplats {
+        transform: translateX(-62px);
     }
