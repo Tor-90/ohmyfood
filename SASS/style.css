@@ -14,7 +14,7 @@
     /****** loader ***********/
 
     .containerloader {
-        display: flex;
+        display: none;
         position: fixed;
         width: 100vw;
         height: 100vh;
@@ -23,6 +23,29 @@
         background-color: white;
         z-index: 2;
         opacity: 0;
+        animation: loader 4000ms;
+    }
+
+    @keyframes loader{
+        0% {
+            opacity: 0.9;
+            display: flex;
+            z-index: 2;
+        }
+
+        95% {
+            opacity: 0.9;
+        }
+
+        99% {
+            z-index: 2;
+        }
+
+        100% {
+            opacity: 0;
+            display: none;
+            z-index: -2;
+        }
     }
 
     .loader {
@@ -119,7 +142,6 @@
         text-align: center;
         padding-left: 39px;
         padding-right: 39px;
-        padding-top: 30px;
         font-size: 25px;
         margin: unset;
     }
@@ -292,38 +314,19 @@
         padding-left: unset;
     }
 
-    .off {
+    .vide {
         position: absolute;
-        z-index: -1;
-        top: 193px;
+        z-index: 0;
     }
 
-    .on {
+    .plein {
         position: absolute;
         background-image: linear-gradient(180deg, #FF79DA, #9356DC);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        top: 193px;
+        animation: display 500ms;
         display: none;
-    }
-
-    .offf {
-        position: absolute;
         z-index: -1;
-        right: 23px;
-        top: 42px;
-        font-size: 22px;
-    }
-
-    .onn {
-        position: absolute;
-        background-image: linear-gradient(180deg, #FF79DA, #9356DC);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        display: none;
-        right: 23px;
-        top: 42px;
-        font-size: 22px;
     }
 
     .restaurants-cards .card-favorite {
@@ -426,7 +429,6 @@
     }
     .titrerestaurant {
         display: flex;
-        
     }
 
     .titrerestaurant h1 {
@@ -434,6 +436,19 @@
         margin-left: 18px;
         margin-bottom: 10px;
         font-size: 28px;
+        margin-top: 20px;
+    }
+
+    .favoriterestaurant {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: auto;
+        position: relative;
+        padding-top: 10px;
+        font-size: 25px;
+        margin-left: 25px;
     }
 
     .menu {
@@ -463,15 +478,50 @@
         justify-content: space-between;
         align-items: center;
         overflow: hidden;
+        margin-right: 0px;
+        animation: plat 500ms;
+    }
+
+    @keyframes plat{
+        0% {
+            margin-right: 500px;
+        }
+
+        100% {
+            margin-right: 0px;
+        }
+    }
+
+    .menu .titreplat {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin-left: 10px;
+    }
+
+
+    .menu .soustitre span {
+        display: flex;
+        margin-top: 35px;
+        padding-right: 20px;
+    }
+
+    .menu .animplats {
+        display: flex;
+        width: auto;
+        height: 100%;
+        justify-content: flex-end;
+        transition: transform 400ms ease-in-out;
     }
 
     .checkbox {
         background-color: #99E2D0;
         height: 100%;
-        width: 85px;
+        width: 0px;
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: width 400ms ease-in-out;
     }
 
     .checkbox i {
@@ -483,33 +533,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        opacity: 0;
+        transition: opacity 400ms ease-in-out;
     }
 
-    .menu .titreplat {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+    .plats:hover .checkbox {
+        width: 70px;
     }
 
-
-    .menu .soustitre span {
-        display: flex;
-        margin-top: 35px;
-        padding-right: 4px;
-    }
-
-    .menu .animplats {
-        display: flex;
-        padding-left: 103px;
-        transition: transform 250ms linear;
-        width: 90px;
-        height: 100%;
+    .plats:hover .checkbox i {
+        opacity: 1;
     }
 
     .plats h3 {
         font-weight: 600;
         font-size: 18px;
-        width: 175px;
+        width: 300px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -518,11 +557,16 @@
     .plats p {
         font-weight: 300;
         font-size: 16px;
-        width: 175px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
+
+    .plats:hover .titreplats {
+        transform: ellipsis;
+        width: 108px;
+    }
+
 
     .plats span {
         font-size: 14px;
@@ -545,10 +589,9 @@
         padding-right: 10px;
      }
 
-     .plats h3,p {
+     .plats h3 p {
         padding-left: 10px;
      }
-
 
      .bouttondeux {
         display: flex;
@@ -568,9 +611,201 @@
         font-weight: 400;
     }
 
-    /****** Annimation ***********/
+    /****** Responsive ***********/
 
+    @media (min-width: 1025px) {
 
-    .plats:hover .animplats {
-        transform: translateX(-62px);
+        /* Header */
+
+        header {
+            width: 100%;
+            height: auto;
+        }
+
+        header img {
+            width: 200px;
+            height: 35px;
+        }
+
+        header .logo {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            box-shadow: unset;
+        }
+
+        .localisation {
+            margin-top: unset;
+            box-shadow: unset;
+            height: 50px;
+        }
+
+        .localisation p {
+            margin-top: 12px;
+        }
+
+        .localisation i {
+            padding-top: 18px;
+        }
+
+        /* Description */
+
+        .description {
+            margin-top: unset;
+            padding-bottom: 30px;
+        }        
+
+        .description h1 {
+            padding: unset;
+            font-size: 39px;
+            padding-top: 25px;
+            padding-bottom: 20px;
+        }
+
+        .description p {
+            padding-bottom: ;
+        }
+
+        .boutton {
+            padding-top: 30px;
+        }
+
+        .boutton span {
+            width: 160px;
+            height: 20px;
+            white-space: nowrap;
+        }
+
+        .explorer {
+            margin-left: -22px;
+        }
+
+        /* Fonctionnement */
+
+        .fonctionnement {
+            padding-bottom: 25px;
+        }
+
+        .fonctionnement h2 {
+            margin: unset;
+            padding-left: 180px;
+            padding-top: 45px;
+        }
+
+        .fonctionnement ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 55px;
+            width: 80%;
+            padding: unset;
+            padding-left: 8.6%;
+            padding-top: 16px;
+            margin-bottom: unset;
+        }
+
+        .fonctionnement li {
+            width: 26%;  
+        }
+
+        /* Restaurants */
+
+        .restaurants {
+            padding-bottom: 35px;
+        }
+
+        .restaurants h2 {
+            margin-top: unset;
+            padding-top: 25px;
+            padding-left: 180px;
+        }
+
+        .restauranthaut {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 3.5%;
+            padding-top: 10px;
+        }
+
+        .restaurantbas {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 3.5%;
+            padding-top: 30px;
+        }
+
+        .restaurants-cards {
+            width: 37.6%;
+        }
+
+        .card-txt {
+            margin-left: 5px;
+        }
+
+        /* Footer */
+
+        footer {
+            padding-top: 1px;
+            padding-bottom: 25px;
+        }
+
+        footer .titre {
+            display: flex;
+            padding-top: 35px;
+            padding-right: 65px;
+            float: inline-end;
+        }
+
+        footer ul {
+            display: flex;
+            flex-direction: row;
+            padding-top: 46px;
+            justify-content: flex-end;
+            padding-right: 4.4%;
+            gap: 42px;
+        }
+
+        footer li {
+            margin-left: unset;
+        }
+
+        footer .liengauche {
+            display: flex;
+            gap: 12px;
+        }
+
+        footer .liendroite {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Restaurants */
+
+        .photorestaurant img {
+            height: 385px;
+        }
+
+        .page {
+            width: 73vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -46px;
+        }
+
+        .containerpage {
+            display: flex;
+            justify-content: center;
+        }
+
+        .titrerestaurant {
+            margin-top: 20px;
+            margin-bottom: 13px;
+        }
+
+        .menu {
+            width: 47vw;
+        }
     }
+
