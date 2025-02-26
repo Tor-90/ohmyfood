@@ -59,10 +59,6 @@
         animation: load 4s linear infinite;
     }
 
-    
-
-    
-
     @keyframes load {
         0%{
             transform: rotate(0deg) scale(1);
@@ -316,7 +312,6 @@
 
     .vide {
         position: absolute;
-        z-index: 0;
     }
 
     .plein {
@@ -324,15 +319,19 @@
         background-image: linear-gradient(180deg, #FF79DA, #9356DC);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        animation: display 500ms;
-        display: none;
-        z-index: -1;
+        opacity: 0;
+        transition: 350ms ease-in-out;
     }
+
+    .plein:hover {
+        opacity: 1;
+    }
+
 
     .restaurants-cards .card-favorite {
         display: flex;
         flex-wrap: wrap;
-        align-content: center;
+        align-items: center;
         margin-right: 23px;
         font-size: 25px;
         color: #353535;
@@ -342,7 +341,7 @@
 
     .restaurants-cards a {
         text-decoration: none;
-        width: 100%;
+        
         display: flex;
         justify-content: center;
     }
@@ -479,10 +478,13 @@
         align-items: center;
         overflow: hidden;
         margin-right: 0px;
-        animation: plat 500ms;
     }
 
-    @keyframes plat{
+    .menu .entrées {
+        animation: entrée 1000ms;
+    }
+
+    @keyframes entrée{
         0% {
             margin-right: 500px;
         }
@@ -492,11 +494,43 @@
         }
     }
 
+    .menu .principal {
+        animation: prin 1500ms;
+    }
+
+    @keyframes prin{
+        0% {
+            margin-right: 400px;
+        }
+
+        100% {
+            margin-right: 0px;
+        }
+    }
+
+    .menu .desserts {
+        animation: dess 2000ms;
+    }
+
+    @keyframes dess{
+        0% {
+            margin-right: 300px;
+        }
+
+        100% {
+            margin-right: 0px;
+        }
+    }
+
+
+
     .menu .titreplat {
-        display: flex;
+        
         flex-direction: column;
-        width: 300px;
+        width: auto;
         margin-left: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
 
@@ -548,7 +582,6 @@
     .plats h3 {
         font-weight: 600;
         font-size: 18px;
-        width: 300px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -659,10 +692,6 @@
             font-size: 39px;
             padding-top: 25px;
             padding-bottom: 20px;
-        }
-
-        .description p {
-            padding-bottom: ;
         }
 
         .boutton {
