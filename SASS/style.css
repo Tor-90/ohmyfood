@@ -14,19 +14,19 @@
     /****** loader ***********/
 
     .containerloader {
-        display: none;
+        display: flex;
         position: fixed;
         width: 100vw;
         height: 100vh;
         justify-content: center;
         align-items: center;
         background-color: white;
-        z-index: 2;
+        z-index: -2;
         opacity: 0;
         animation: loader 4000ms;
     }
 
-    @keyframes loader{
+    @keyframes loader {
         0% {
             opacity: 0.9;
             display: flex;
@@ -80,8 +80,6 @@
             transform: rotate(720deg) scale(1);
         }
     }
-
-
     
     /****** Header ***********/
 
@@ -486,7 +484,7 @@
 
     @keyframes entrée{
         0% {
-            margin-right: 500px;
+            margin-right: 1000px;
         }
 
         100% {
@@ -500,7 +498,7 @@
 
     @keyframes prin{
         0% {
-            margin-right: 400px;
+            margin-right: 1000px;
         }
 
         100% {
@@ -514,7 +512,7 @@
 
     @keyframes dess{
         0% {
-            margin-right: 300px;
+            margin-right: 1000px;
         }
 
         100% {
@@ -594,12 +592,6 @@
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-
-    .plats:hover .titreplats {
-        transform: ellipsis;
-        width: 108px;
-    }
-
 
     .plats span {
         font-size: 14px;
