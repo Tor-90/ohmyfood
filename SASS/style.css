@@ -28,13 +28,13 @@
 
     @keyframes loader {
         0% {
-            opacity: 0.9;
+            opacity: 1;
             display: flex;
             z-index: 2;
         }
 
         95% {
-            opacity: 0.9;
+            opacity: 1;
         }
 
         99% {
@@ -127,7 +127,7 @@
     /****** Description ***********/
 
     .description {
-        margin-top: 4px;
+        margin-top: 30px;
         padding-bottom: 50px;
         background-color: #F6F6F6;
     }
